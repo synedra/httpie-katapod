@@ -9,7 +9,10 @@
       "extensions": [
         "datastax-academy.katapod",
         "vsls-contrib.codetour"
-      ]
+      ],
+      "settings": {
+        "workbench.panel.defaultLocation": "right"
+      }
     }
   },
   "forwardPorts": [8080, 8081, 8082],
