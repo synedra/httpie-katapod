@@ -3,17 +3,22 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "./.devcontainer/post-create.sh && code --command workbench.action.togglePanel && code --command workbench.action.terminal.new",
+  "postCreateCommand": "./.devcontainer/post-create.sh",
+  "onCreateCommand": "echo 'Container created'",
   "customizations": {
     "vscode": {
       "extensions": [
         "vsls-contrib.codetour"
       ],
       "settings": {
+        "workbench.sideBar.location": "left",
         "workbench.panel.defaultLocation": "right",
+        "workbench.panel.opensMaximized": "never",
         "github.copilot.enable": {
           "*": false
-        }
+        },
+        "github.copilot.chat.enabled": false,
+        "github.copilot.inlineSuggest.enable": false
       }
     }
   },

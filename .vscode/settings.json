@@ -1,0 +1,10 @@
+{
+  "workbench.panel.defaultLocation": "right",
+  "workbench.sideBar.location": "left",
+  "github.copilot.enable": {
+    "*": false
+  },
+  "github.copilot.chat.enabled": false,
+  "github.copilot.inlineSuggest.enable": false,
+  "terminal.integrated.defaultLocation": "panel"
+}
