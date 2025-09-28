@@ -40,19 +40,6 @@
               Start with Astra DB
             </a>
           </div>
-          <!--
-          <div class="feature col div-choice">
-            <div class="logo-cassandra">
-                <img src="https://datastax-academy.github.io/katapod-shared-assets/images/logo-cassandra.png" height="40px" />
-            </div>
-            <div class="cassandra-line1">Local deployment of open-source Apache Cassandra</div>
-            <div class="cassandra-line2">You will use a Cassandra cluster deployed locally in Gitpod using Docker.</div>
-            <br/>
-            <a href='command:katapod.loadPage?[{"step":"step1-cassandra"}]' class="btn btn-primary btn-cassandra">
-              Start with Cassandra
-            </a>   
-          </div>
-          -->
         </div>
     </div>
 </main>
