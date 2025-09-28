@@ -3,7 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "./.devcontainer/post-create.sh",
+  "postCreateCommand": "./.devcontainer/post-create.sh && code --command workbench.action.terminal.new",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -11,7 +11,8 @@
         "vsls-contrib.codetour"
       ],
       "settings": {
-        "workbench.panel.defaultLocation": "right"
+        "workbench.panel.defaultLocation": "right",
+        "github.copilot.chat.visible": false
       }
     }
   },
