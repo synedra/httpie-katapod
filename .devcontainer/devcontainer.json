@@ -11,7 +11,9 @@
       ],
       "settings": {
         "workbench.panel.defaultLocation": "right",
-        "github.copilot.enable": false
+        "github.copilot.enable": {
+          "*": false
+        }
       }
     }
   },
