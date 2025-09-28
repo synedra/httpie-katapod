@@ -1,0 +1,26 @@
+{
+  "name": "Httpie Katapod",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "./.devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "https://github.com/DataStax-Academy/katapod/releases/download/stable/katapod-stable.vsix"
+      ]
+    }
+  },
+  "forwardPorts": [8080, 8081, 8082],
+  "portsAttributes": {
+    "8080": {
+      "label": "stargate"
+    },
+    "8081": {
+      "label": "stargate"
+    },
+    "8082": {
+      "label": "stargate"
+    }
+  }
+}
