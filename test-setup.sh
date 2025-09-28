@@ -82,8 +82,8 @@ echo
 echo "🎯 Setup Test Complete!"
 echo "=================================="
 echo "Next steps:"
-echo "1. Reload VS Code window (Ctrl+Shift+P → 'Developer: Reload Window')"
-echo "2. Start CodeTour (Ctrl+Shift+P → 'CodeTour: Start Tour')"
+echo "1. Reload VS Code window (Cmd+Shift+P → 'Developer: Reload Window')"
+echo "2. Start CodeTour (Cmd+Shift+P → 'CodeTour: Start Tour')"
 echo "3. Verify terminal appears in right panel"
 echo "4. Follow the tutorial steps!"
 echo

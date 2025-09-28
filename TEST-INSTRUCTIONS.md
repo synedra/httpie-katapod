@@ -9,15 +9,15 @@ Make sure you have the CodeTour extension installed in VS Code:
 ## Testing Steps
 
 ### 1. Test Terminal Configuration
-1. **Reload VS Code window**: Press `Ctrl+Shift+P` → "Developer: Reload Window"
-2. **Check terminal location**: 
-   - Press `Ctrl+`` (backtick) to open terminal
+1. **Reload VS Code window**: Press `Cmd+Shift+P` → "Developer: Reload Window"
+2. **Check terminal location**:
+   - Press `Cmd+`` (backtick) to open terminal
    - Verify the terminal appears in the RIGHT panel (not in the editor area)
    - If no terminal appears, run: `./open-terminal.sh`
 
 ### 2. Test CodeTour
-1. **Start the tour**: 
-   - Press `Ctrl+Shift+P`
+1. **Start the tour**:
+   - Press `Cmd+Shift+P`
    - Type "CodeTour: Start Tour"
    - Select the "Exploring Stargate with HTTPie - Astra" tour
 
@@ -60,14 +60,14 @@ astra --version
 - Display less HTML clutter than before
 
 ❌ **If terminal doesn't appear**:
-1. Try `Ctrl+`` to toggle terminal
+1. Try `Cmd+`` to toggle terminal
 2. Run `./open-terminal.sh`
 3. Check View → Terminal menu
 4. Restart VS Code completely
 
 ❌ **If CodeTour doesn't work**:
 1. Ensure CodeTour extension is installed and enabled
-2. Try `Ctrl+Shift+P` → "CodeTour: End Tour" then start again
+2. Try `Cmd+Shift+P` → "CodeTour: End Tour" then start again
 3. Check if `.tours/astra.tour` file exists
 
 ## Verification Checklist
@@ -82,7 +82,7 @@ astra --version
 ## Troubleshooting
 
 If issues persist:
-1. Check VS Code settings: `Ctrl+,` → search "terminal location"
+1. Check VS Code settings: `Cmd+,` → search "terminal location"
 2. Verify settings match `.vscode/settings.json`
 3. Try opening a new VS Code window with this workspace
 4. Check the Output panel for any extension errors

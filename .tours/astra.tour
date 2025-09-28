@@ -8,82 +8,127 @@
     },
     {
       "file": "step1-astra.md",
-      "line": 47,
-      "description": "**Step 1: Connect to Astra DB and create a database**\n\nFirst, let's set up your Astra CLI with your Database Administrator token:\n\n```bash\nastra setup\n```\n\nRun this command in the terminal to configure your Astra CLI."
-    },
-    {
-      "file": "step1-astra.md", 
-      "line": 53,
-      "description": "Now create your database and keyspace:\n\n```bash\nastra db create workshops -k library --if-not-exist --wait\n```\n\nThis creates a database called 'workshops' with a keyspace called 'library'."
-    },
-    {
-      "file": "step1-astra.md",
-      "line": 61,
-      "description": "Verify your database is active:\n\n```bash\nastra db get workshops\n```\n\nMake sure the status shows as 'ACTIVE' before proceeding."
+      "line": 6,
+      "description": "**Step 1: Connect to Astra DB and create a database**\n\nFirst, let's set up your Astra CLI with your Database Administrator token:",
+      "commands": [
+        "astra setup"
+      ]
     },
     {
       "file": "step1-astra.md",
-      "line": 73,
-      "description": "Create the credentials file:\n\n```bash\nastra db create-dotenv -k library workshops\n```\n\nThis generates the environment configuration for your database."
+      "line": 10,
+      "description": "Now create your database and keyspace:\n\nThis creates a database called 'workshops' with a keyspace called 'library'.",
+      "commands": [
+        "astra db create workshops -k library --if-not-exist --wait"
+      ]
     },
     {
       "file": "step1-astra.md",
-      "line": 79,
-      "description": "Copy credentials to your environment:\n\n```bash\npython assets/set-environment.py .env workshops\n```\n\nThis sets up your HTTPie configuration."
+      "line": 14,
+      "description": "Verify your database is active:\n\nMake sure the status shows as 'ACTIVE' before proceeding.",
+      "commands": [
+        "astra db get workshops"
+      ]
     },
     {
       "file": "step1-astra.md",
-      "line": 87,
-      "description": "Test your credentials with HTTPie:\n\n```bash\nhttp --auth-type astra -a workshops: :/rest/v1/keyspaces\n```\n\nOr use the simpler version:\n\n```bash\nhttp :/rest/v1/keyspaces\n```\n\nYou should see your keyspaces listed in the response."
+      "line": 18,
+      "description": "Create the credentials file:\n\nThis generates the environment configuration for your database.",
+      "commands": [
+        "astra db create-dotenv -k library workshops"
+      ]
+    },
+    {
+      "file": "step1-astra.md",
+      "line": 22,
+      "description": "Copy credentials to your environment:\n\nThis sets up your HTTPie configuration.",
+      "commands": [
+        "python assets/set-environment.py .env workshops"
+      ]
+    },
+    {
+      "file": "step1-astra.md",
+      "line": 26,
+      "description": "Test your credentials with HTTPie:\n\nYou should see your keyspaces listed in the response.",
+      "commands": [
+        "http :/rest/v1/keyspaces"
+      ]
     },
     {
       "file": "step2-astra.md",
-      "line": 38,
-      "description": "**Step 2: Working with Tables**\n\nFirst, check for your keyspace:\n\n```bash\nhttp :/rest/v2/schemas/keyspaces\n```\n\nYou should see 'library' in the response."
+      "line": 6,
+      "description": "**Step 2: Working with Tables**\n\nFirst, check for your keyspace:\n\nYou should see 'library' in the response.",
+      "commands": [
+        "http :/rest/v2/schemas/keyspaces"
+      ]
     },
     {
       "file": "step2-astra.md",
-      "line": 60,
-      "description": "Create a users table:\n\n```bash\nhttp POST :/rest/v2/schemas/keyspaces/library/tables json:='{\n\t\"name\": \"users\",\n\t\"columnDefinitions\":\n\t  [\n        {\n\t      \"name\": \"firstname\",\n\t      \"typeDefinition\": \"text\"\n\t    },\n        {\n\t      \"name\": \"lastname\", \n\t      \"typeDefinition\": \"text\"\n\t    },\n        {\n\t      \"name\": \"favorite color\",\n\t      \"typeDefinition\": \"text\"\n\t    }\n\t  ],\n\t\"primaryKey\":\n\t  {\n\t    \"partitionKey\": [\"firstname\"],\n\t    \"clusteringKey\": [\"lastname\"]\n\t  },\n\t\"tableOptions\":\n\t  {\n\t    \"defaultTimeToLive\": 0,\n\t    \"clusteringExpression\":\n\t      [{ \"column\": \"lastname\", \"order\": \"ASC\" }]\n\t  }\n}'\n```"
+      "line": 10,
+      "description": "Create a users table with firstname, lastname, and favorite color columns:",
+      "commands": [
+        "http POST :/rest/v2/schemas/keyspaces/library/tables json:='{\n\t\"name\": \"users\",\n\t\"columnDefinitions\":\n\t  [\n        {\n\t      \"name\": \"firstname\",\n\t      \"typeDefinition\": \"text\"\n\t    },\n        {\n\t      \"name\": \"lastname\", \n\t      \"typeDefinition\": \"text\"\n\t    },\n        {\n\t      \"name\": \"favorite color\",\n\t      \"typeDefinition\": \"text\"\n\t    }\n\t  ],\n\t\"primaryKey\":\n\t  {\n\t    \"partitionKey\": [\"firstname\"],\n\t    \"clusteringKey\": [\"lastname\"]\n\t  },\n\t\"tableOptions\":\n\t  {\n\t    \"defaultTimeToLive\": 0,\n\t    \"clusteringExpression\":\n\t      [{ \"column\": \"lastname\", \"order\": \"ASC\" }]\n\t  }\n}'"
+      ]
     },
     {
       "file": "step2-astra.md",
-      "line": 94,
-      "description": "Verify the table was created:\n\n```bash\nhttp :/rest/v2/schemas/keyspaces/library/tables\n```\n\nYou should see your 'users' table listed."
+      "line": 34,
+      "description": "Verify the table was created:\n\nYou should see your 'users' table listed.",
+      "commands": [
+        "http :/rest/v2/schemas/keyspaces/library/tables"
+      ]
     },
     {
       "file": "step3-astra.md",
-      "line": 36,
-      "description": "**Step 3: Working with Data**\n\nAdd your first user:\n\n```bash\nhttp POST :/rest/v2/keyspaces/library/users json:='{\n    \"firstname\": \"Mookie\",\n    \"lastname\": \"Betts\", \n    \"favorite color\": \"blue\"\n}'\n```"
+      "line": 6,
+      "description": "**Step 3: Working with Data**\n\nAdd your first user:",
+      "commands": [
+        "http POST :/rest/v2/keyspaces/library/users json:='{\n    \"firstname\": \"Mookie\",\n    \"lastname\": \"Betts\", \n    \"favorite color\": \"blue\"\n}'"
+      ]
     },
     {
       "file": "step3-astra.md",
-      "line": 45,
-      "description": "Add a second user:\n\n```bash\nhttp POST :/rest/v2/keyspaces/library/users json:='{\n    \"firstname\": \"Janesha\",\n    \"lastname\": \"Doesha\",\n    \"favorite color\": \"grey\"\n}'\n```"
+      "line": 14,
+      "description": "Add a second user:",
+      "commands": [
+        "http POST :/rest/v2/keyspaces/library/users json:='{\n    \"firstname\": \"Janesha\",\n    \"lastname\": \"Doesha\",\n    \"favorite color\": \"grey\"\n}'"
+      ]
     },
     {
       "file": "step3-astra.md",
-      "line": 56,
-      "description": "Query your data:\n\n```bash\nhttp :/rest/v2/keyspaces/library/users where=='{\"firstname\":{\"$in\":[\"Mookie\",\"Janesha\"]}}' -vvv\n```\n\nYou should see both users in the response."
+      "line": 22,
+      "description": "Query your data:\n\nYou should see both users in the response.",
+      "commands": [
+        "http :/rest/v2/keyspaces/library/users where=='{\"firstname\":{\"$in\":[\"Mookie\",\"Janesha\"]}}' -vvv"
+      ]
     },
     {
       "file": "step3-astra.md",
-      "line": 70,
-      "description": "Update a user's favorite color:\n\n```bash\nhttp PUT :/rest/v2/keyspaces/library/users/Janesha/Doesha json:='{ \"favorite color\": \"Fuchsia\"}'\n```"
+      "line": 26,
+      "description": "Update a user's favorite color:",
+      "commands": [
+        "http PUT :/rest/v2/keyspaces/library/users/Janesha/Doesha json:='{ \"favorite color\": \"Fuchsia\"}'"
+      ]
     },
     {
       "file": "step3-astra.md",
-      "line": 92,
-      "description": "Delete a user:\n\n```bash\nhttp DELETE :/rest/v2/keyspaces/library/users/Janesha/Doesha\n```"
+      "line": 30,
+      "description": "Delete a user:",
+      "commands": [
+        "http DELETE :/rest/v2/keyspaces/library/users/Janesha/Doesha"
+      ]
     },
     {
       "file": "step3-astra.md",
-      "line": 106,
-      "description": "Clean up by deleting the table:\n\n```bash\nhttp DELETE :/rest/v2/schemas/keyspaces/library/tables/users\n```"
+      "line": 34,
+      "description": "Clean up by deleting the table:",
+      "commands": [
+        "http DELETE :/rest/v2/schemas/keyspaces/library/tables/users"
+      ]
     },
     {
       "file": "finish-astra.md",
-      "line": 23,
+      "line": 4,
       "description": "**Congratulations!** 🎉\n\nYou've completed the HTTPie Astra exploration lab!\n\n**What you learned:**\n- Connect your workspace to the Astra Database\n- Explore Stargate APIs using HTTPie\n- Create tables, insert data, query, update, and delete records\n\nGreat job working through the Stargate REST API!"
     }
   ]
