@@ -3,7 +3,14 @@
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.panel.opensMaximized": "never",
-  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.defaultLocation": "panel",
+  "terminal.integrated.showOnStartup": "always",
+  "workbench.panel.defaultSize": 400,
+  "markdown.preview.breaks": true,
+  "markdown.preview.linkify": false,
+  "markdown.extension.preview.autoShowPreviewToSide": false,
+  "codetour.showMarkers": false,
+  "codetour.recordMode": false,
   "github.copilot.enable": {
     "*": false
   },

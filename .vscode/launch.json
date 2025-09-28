@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "HTTPie Katapod Setup",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/setup.js",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}

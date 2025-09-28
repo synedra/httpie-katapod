@@ -1,0 +1,22 @@
+[H[2J[3J 
+    _____            __ 
+   /  _  \   _______/  |_____________ 
+  /  /_\  \ /  ___/\   __\_  __ \__  \ 
+ /    |    \___ \  |  |  |  | \// __ \_ 
+ \____|__  /____  > |__|  |__|  (____  / 
+         \/     \/                   \/ 
+ 
+Installing Astra Cli[36m 0.6 [37m please wait...      
+
+[36mChecking prerequisites:[37m
+[32m[OK][37m - Ready to install.
+[32m[OK][37m - unzip command is available
+[32m[OK][37m - curl command is available
+
+[36mPreparing directories:[37m
+[32m[OK][37m - Created /home/vscode/.astra/tmp
+[32m[OK][37m - Created /home/vscode/.astra/cli
+[32m[OK][37m - Created /home/vscode/.astra/scb
+
+[36mDownloading archive:[37m
+'curl --fail --location --progress-bar "$download_url" > "$astra_zip_file"': command failed with exit code 3.
