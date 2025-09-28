@@ -1,10 +1,13 @@
 {
   "workbench.panel.defaultLocation": "right",
   "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "none",
+  "workbench.panel.opensMaximized": "never",
+  "terminal.integrated.defaultLocation": "editor",
   "github.copilot.enable": {
     "*": false
   },
   "github.copilot.chat.enabled": false,
   "github.copilot.inlineSuggest.enable": false,
-  "terminal.integrated.defaultLocation": "panel"
+  "extensions.autoUpdate": false
 }
