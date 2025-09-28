@@ -6,7 +6,7 @@
 
 ## Start the hands-on lab (Chrome, Firefox and possibly Edge will work.  Safari is right out.)
 
-[![Open in KataPod](https://github.com/DataStax-Academy/katapod-shared-assets/blob/main/images/open-in-katapod.png)](https://gitpod.io/#https://github.com/datastax-academy/httpie-katapod)
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in%20GitHub%20Codespaces-blue?logo=github)](https://github.com/codespaces/new?repo=datastax-academy/httpie-katapod)
 
 ----
 # Want to use this on your local system?

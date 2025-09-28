@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     config[section] = configenv[section]
 
-    with open("/home/gitpod/.astrarc", "w") as configfile:
+    with open("/home/vscode/.astrarc", "w") as configfile:
         config.write(configfile)
 
     print(sys.argv[1])
