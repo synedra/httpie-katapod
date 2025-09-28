@@ -9,8 +9,13 @@ RUN apt-get update && \
 	apt-get install -y python3 python3-pip && \
 	rm -rf /var/lib/apt/lists/*
 
+RUN apk add py3-pip
 USER vscode
-RUN pip3 install httpie-astra==0.1.3
+RUN python -m venv ~/.venv
+RUN source ~/.venv/bin/activate
+RUN pip install --upgrade pip
+
+RUN pip install httpie-astra
 
 EXPOSE 8080
 EXPOSE 8081
